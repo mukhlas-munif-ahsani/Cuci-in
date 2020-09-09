@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="8dp"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/loginHeader"
+        android:text="Masuk"
+        android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputEmail"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmail"
+            style="@style/modifiedEditText"
+            android:backgroundTint="#00555555"
+            android:hint="@string/login_email_hint"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            tools:targetApi="lollipop" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputPassword"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPassword"
+            style="@style/modifiedEditText"
+            android:backgroundTint="#00555555"
+            android:hint="@string/login_password_hint"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            tools:targetApi="lollipop" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="182dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="LANJUT"
+        android:textSize="@dimen/newsMoreTextSize"
+        app:cornerRadius="27dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+    <TextView
+        style="@style/parent"
+        android:layout_width="182dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="ATAU"
+        android:layout_marginTop="4dp"
+        tools:ignore="RtlCompat" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/regBtn"
+        android:layout_width="182dp"
+        android:layout_height="70dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="right"
+        android:text="DAFTAR DULU"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cornerRadius="27dp" />
+
+</LinearLayout>

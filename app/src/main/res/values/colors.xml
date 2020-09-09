@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00BBF9</color>
+    <color name="colorPrimaryDark">#0097c9</color>
+    <color name="colorAccent">#ACCAFC</color>
+
+    <!--colors for modern ui-->
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">#BDB2FF</color>
+    <color name="loginBkColor">#f0f0f0</color>
+
+    <!--colros for card-->
+    <color name="whiteCardColor">#fff</color>
+    <color name="transparent">#00555555</color>
+
+    <color name="cardColor1">#FFADAD</color>
+    <color name="cardColor2">#FFD6A5</color>
+    <color name="cardColor3">#FDFFB6</color>
+    <color name="cardColor4">#CAFFBF</color>
+    <color name="cardColor5">#9BF6FF</color>
+    <color name="cardColor6">#A0C4FF</color>
+    <color name="cardColor7">#FFC6FF</color>
+    <color name="cardColor8">#FFC6FF</color>
+
+    <color name="backGroundColor1">#FFEFEF</color>
+    <color name="backGroundColor2">#FEF3E7</color>
+    <color name="backGroundColor3">#FDFEE5</color>
+    <color name="backGroundColor4">#EBFCE8</color>
+    <color name="backGroundColor5">#DEF9FC</color>
+    <color name="backGroundColor6">#E9F1FF</color>
+    <color name="backGroundColor7">#EDEBFB</color>
+    <color name="backGroundColor8">#FBEEFB</color>
+
+    <color name="fabBackgroundColor">#00BBF9</color>
+    <color name="fabIconColor">#FFFFFF</color>
+    <color name="fabBGColor">#FFFFFF</color>
+    <color name="putih">#FFFFFF</color>
+    <color name="hitam">#000A09</color>
+    <color name="abuAbu">#E4E4E4</color>
+
+
+    <!--color for bot nav-->
+    <color name="navActive">#00BBF9</color>
+    <color name="navInActive">#71DCFF</color>
+
+
+</resources>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PilihCucian.view.PilihCucianActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:id="@+id/main_toolbar_title"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Pilih Cucian"
+                app:titleTextColor="@color/putih" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/viewpagertab_daftar_pilihan"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/appbar"
+            android:background="@color/colorPrimary"
+            android:clipToPadding="false"
+            android:elevation="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:visibility="visible"
+            app:stl_defaultTabTextColor="@color/putih"
+            app:stl_defaultTabTextHorizontalPadding="18dp"
+            app:stl_distributeEvenly="true"
+            app:stl_dividerColor="@color/transparent"
+            app:stl_dividerThickness="0dp"
+            app:stl_indicatorColor="@color/putih"
+            app:stl_indicatorCornerRadius="18dp"
+            app:stl_indicatorGravity="bottom"
+            app:stl_indicatorInterpolation="linear"
+            app:stl_indicatorThickness="3dp"
+            app:stl_underlineColor="@color/transparent"
+            app:stl_underlineThickness="1dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.munifahsan.gowash.CustomViewPager
+        android:id="@+id/viewpager_pilih_baju"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bajuDitambah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/putih"
+                android:text="Total baju"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/totalBaju"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bajuDitambah"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/putih"
+                android:layout_marginTop="2dp"
+                android:text="0"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/putih" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bajuDitambahBerat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/putih"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Total Berat"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/kgBerat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bajuDitambahBerat"
+                android:layout_marginStart="0dp"
+                android:textColor="@color/putih"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/totalBerat"
+                android:text="g"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalBerat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bajuDitambahBerat"
+                android:textColor="@color/putih"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:text="0"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/putih" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bajuDitambahHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/putih"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Total Harga"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/rplHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bajuDitambahHarga"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/putih"
+                android:text="Rp."
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bajuDitambahHarga"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/rplHarga"
+                android:textColor="@color/putih"
+                android:text="0"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/putih" />
+
+        <RelativeLayout
+            android:id="@+id/nextBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nextTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="2dp"
+                android:layout_toStartOf="@+id/imageView"
+                android:textColor="@color/putih"
+                android:text="Lanjut"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_navigate_next" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

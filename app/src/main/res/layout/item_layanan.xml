@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardBG"
+    android:layout_width="match_parent"
+    android:layout_height="262dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/item_layanan_bg" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/nexa_bold"
+            android:text="Cuci Komplit Reguler"
+            android:textColor="#262626"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto"
+            android:maxLines="3"
+            android:text="Description" />
+
+        <Button
+            android:id="@+id/pilihLayananBtn"
+            android:layout_width="130dp"
+            android:layout_height="58dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            app:elevation="0dp"
+            android:layout_marginBottom="10dp"
+            android:text="pilih"
+            android:textColor="@color/hitam"
+            app:backgroundTint="@color/putih"
+            app:cornerRadius="24dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

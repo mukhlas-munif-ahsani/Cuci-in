@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemKetentuan"
+        android:icon="@drawable/state_bot_nav_ic_ketentuan"
+        android:title="Baca" />
+
+    <item
+        android:id="@+id/itemHistory"
+        android:icon="@drawable/state_bot_nav_ic_history"
+        android:title="Riwayat" />
+
+    <item
+        android:id="@+id/itemEmpty"
+        android:title=""/>
+
+    <item
+        android:id="@+id/itemKupon"
+        android:icon="@drawable/state_bot_nave_ic_promo"
+        android:title="Kupon" />
+
+    <item
+        android:id="@+id/itemProfile"
+        android:icon="@drawable/state_bot_nav_ic_profile"
+        android:title="Akun" />
+</menu>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "907579778696",
+    "firebase_url": "https://cuci-in-app.firebaseio.com",
+    "project_id": "cuci-in-app",
+    "storage_bucket": "cuci-in-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907579778696:android:47ad91528e1fc4f218e13d",
+        "android_client_info": {
+          "package_name": "com.munifahsan.gowash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907579778696-cu1th919hqslp45h801cc989curav9ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmRzqY9Js3RruBxIddqCyKzePnlcUfZ0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907579778696-cu1th919hqslp45h801cc989curav9ao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
