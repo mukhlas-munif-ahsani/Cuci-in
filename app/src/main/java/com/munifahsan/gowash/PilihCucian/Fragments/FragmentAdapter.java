@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.Pria;
+package com.munifahsan.gowash.PilihCucian.Fragments;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,23 +29,19 @@ import java.util.Map;
 
 import at.markushi.ui.CircleButton;
 
-public class PriaAdapter extends FirestoreRecyclerAdapter<PriaModel, PriaAdapter.Holder> {
+public class FragmentAdapter extends FirestoreRecyclerAdapter<FragmentModel, FragmentAdapter.Holder> {
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
      * FirestoreRecyclerOptions} for configuration options.
      *
      * @param options
      */
-
-    boolean isComplete = false;
-    int mJumlah;
-
-    public PriaAdapter(@NonNull FirestoreRecyclerOptions<PriaModel> options) {
+    public FragmentAdapter(@NonNull FirestoreRecyclerOptions<FragmentModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull Holder holder, int position, @NonNull PriaModel model) {
+    protected void onBindViewHolder(@NonNull Holder holder, int position, @NonNull FragmentModel model) {
         holder.mNamaBaju.setText(model.getnNama());
         holder.mBeratbaju.setText(String.valueOf(model.getnBerat()));
         holder.mHargabaju.setText(String.valueOf(model.getnHarga()));

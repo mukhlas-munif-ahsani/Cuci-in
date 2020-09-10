@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PilihCucian.Pria.PriaFragment">
+    tools:context=".PilihCucian.Fragments.PriaFragment">
 
     <ScrollView
         android:id="@+id/priaLoadingContent"
-        android:visibility="invisible"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="invisible">
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:layout_width="match_parent"
@@ -28,25 +28,25 @@
         </com.facebook.shimmer.ShimmerFrameLayout>
     </ScrollView>
 
-        <RelativeLayout
-            android:id="@+id/priaListContent"
+    <RelativeLayout
+        android:id="@+id/priaListContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listAtasan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listAtasan"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true" />
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="1000dp"-->
-<!--                android:layout_below="@+id/listAtasan"-->
-<!--                android:layout_marginStart="@dimen/margin_start"-->
-<!--                android:layout_marginEnd="@dimen/margin_end"-->
-<!--                app:cardCornerRadius="15dp" />-->
-        </RelativeLayout>
+        <!--            <androidx.cardview.widget.CardView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="1000dp"-->
+        <!--                android:layout_below="@+id/listAtasan"-->
+        <!--                android:layout_marginStart="@dimen/margin_start"-->
+        <!--                android:layout_marginEnd="@dimen/margin_end"-->
+        <!--                app:cardCornerRadius="15dp" />-->
+    </RelativeLayout>
 
 </FrameLayout>

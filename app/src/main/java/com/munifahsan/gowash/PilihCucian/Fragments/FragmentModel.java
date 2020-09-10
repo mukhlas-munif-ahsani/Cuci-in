@@ -1,8 +1,8 @@
-package com.munifahsan.gowash.PilihCucian.Pria;
+package com.munifahsan.gowash.PilihCucian.Fragments;
 
 import com.google.firebase.firestore.DocumentId;
 
-public class PriaModel {
+public class FragmentModel {
     @DocumentId
     private String id;
     private String nNama;
@@ -12,9 +12,9 @@ public class PriaModel {
     private int nTipe;
     private boolean nVisibility;
 
-    public PriaModel(){}
+    public FragmentModel(){}
 
-    public PriaModel(String id, String nNama, String nGambar, int nHarga, int nBerat,int nTipe, boolean nVisibility) {
+    public FragmentModel(String id, String nNama, String nGambar, int nHarga, int nBerat, int nTipe, boolean nVisibility) {
         this.id = id;
         this.nNama = nNama;
         this.nGambar = nGambar;

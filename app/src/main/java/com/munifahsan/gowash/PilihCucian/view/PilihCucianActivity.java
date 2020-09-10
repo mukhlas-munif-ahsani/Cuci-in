@@ -5,23 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.munifahsan.gowash.CustomViewPager;
 import com.munifahsan.gowash.IdGenerator.IdGenerator;
-import com.munifahsan.gowash.PilihCucian.Anak.AnakFragment;
+import com.munifahsan.gowash.PilihCucian.Fragments.AnakFragment;
 import com.munifahsan.gowash.PilihCucian.BajuModel;
-import com.munifahsan.gowash.PilihCucian.LainLain.LainLainFragment;
-import com.munifahsan.gowash.PilihCucian.Pria.PriaFragment;
-import com.munifahsan.gowash.PilihCucian.Wanita.WanitaFragment;
+import com.munifahsan.gowash.PilihCucian.Fragments.LainLainFragment;
+import com.munifahsan.gowash.PilihCucian.Fragments.PriaFragment;
+import com.munifahsan.gowash.PilihCucian.Fragments.WanitaFragment;
 import com.munifahsan.gowash.PilihCucian.pres.PilihCucianPres;
 import com.munifahsan.gowash.PilihCucian.pres.PilihCucianPresInt;
 import com.munifahsan.gowash.R;
@@ -114,6 +112,10 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         mPilihCucianPres.createNewOrder(mOrderId, mUserId);
     }
 
+    /**
+     * this function used by adapter
+     * (pria, wanita, anak and lainlain)
+     */
     public void tambahTotalhBaju() {
         mTotalBaju = mTotalBaju + 1;
         mTotalBajuTxt.setText(String.valueOf(mTotalBaju));
@@ -143,6 +145,10 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         //update---
     }
 
+    /**
+     * this function used by adapter
+     * (pria, wanita, anak and lainlain)
+     */
     public void kurangTotalBaju() {
         mTotalBaju = mTotalBaju - 1;
         if (mTotalBaju < 1)
@@ -174,6 +180,10 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         //update---
     }
 
+    /**
+     * this function used by adapter
+     * (pria, wanita, anak and lainlain)
+     */
     public void tambahTotalHarga(int harga) {
         mTotalHarga = mTotalHarga + harga;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
@@ -204,6 +214,10 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         //update---
     }
 
+    /**
+     * this function used by adapter
+     * (pria, wanita, anak and lainlain)
+     */
     public void kurangTotalHarga(int harga) {
         mTotalHarga = mTotalHarga - harga;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
@@ -234,6 +248,10 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         //update---
     }
 
+    /**
+     * this function used by adapter
+     * (pria, wanita, anak and lainlain)
+     */
     public void tambahTotalBerat(int berat) {
         mTotalBerat = mTotalBerat + berat;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
@@ -264,6 +282,10 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         //update---
     }
 
+    /**
+     * this function used by adapter
+     * (pria, wanita, anak and lainlain)
+     */
     public void kurangTotalBerat(int berat) {
         mTotalBerat = mTotalBerat - berat;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
@@ -314,6 +336,10 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         PriaFragment.getInstance().hideLoading();
     }
 
+    /**
+     * this function used by adapter
+     * (pria, wanita, anak and lainlain)
+     */
     public String orderId() {
         return mOrderId;
     }
