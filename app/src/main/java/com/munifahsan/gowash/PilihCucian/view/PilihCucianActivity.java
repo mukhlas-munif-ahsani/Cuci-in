@@ -1,15 +1,24 @@
 package com.munifahsan.gowash.PilihCucian.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.munifahsan.gowash.CustomViewPager;
 import com.munifahsan.gowash.IdGenerator.IdGenerator;
 import com.munifahsan.gowash.PilihCucian.Anak.AnakFragment;
+import com.munifahsan.gowash.PilihCucian.BajuModel;
 import com.munifahsan.gowash.PilihCucian.LainLain.LainLainFragment;
 import com.munifahsan.gowash.PilihCucian.Pria.PriaFragment;
 import com.munifahsan.gowash.PilihCucian.Wanita.WanitaFragment;
@@ -22,6 +31,8 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,6 +64,8 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
     private String mUserId;
 
     private static PilihCucianActivity instance;
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +95,6 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         mPilihanTablayout.setViewPager(mViewPager);
 
         createNewOrder();
-//        showMessage(mGeneratedId.getOrderId());
     }
 
     @Override
@@ -105,6 +117,30 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
     public void tambahTotalhBaju() {
         mTotalBaju = mTotalBaju + 1;
         mTotalBajuTxt.setText(String.valueOf(mTotalBaju));
+        Map<String, Object> map = new HashMap<>();
+        map.put("nTotalBaju", mTotalBaju);
+        //update---
+        firebaseFirestore.collection("ORDERS").document(mOrderId)
+                .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    //get---
+                    firebaseFirestore.collection("ORDERS").document(mOrderId)
+                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                BajuModel model = documentSnapshot.toObject(BajuModel.class);
+                                mTotalBajuTxt.setText(String.valueOf(model.getnTotalBaju()));
+                            }
+                        }
+                    });
+                    //get---
+                }
+            }
+        });
+        //update---
     }
 
     public void kurangTotalBaju() {
@@ -112,30 +148,150 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         if (mTotalBaju < 1)
             mTotalBaju = 0;
         mTotalBajuTxt.setText(String.valueOf(mTotalBaju));
+        Map<String, Object> map = new HashMap<>();
+        map.put("nTotalBaju", mTotalBaju);
+        //update---
+        firebaseFirestore.collection("ORDERS").document(mOrderId)
+                .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    //get---
+                    firebaseFirestore.collection("ORDERS").document(mOrderId)
+                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                BajuModel model = documentSnapshot.toObject(BajuModel.class);
+                                mTotalBajuTxt.setText(String.valueOf(model.getnTotalBaju()));
+                            }
+                        }
+                    });
+                    //get---
+                }
+            }
+        });
+        //update---
     }
 
     public void tambahTotalHarga(int harga) {
         mTotalHarga = mTotalHarga + harga;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
         mTotalHargaTxt.setText(decimalFormat.format(mTotalHarga));
+        Map<String, Object> map = new HashMap<>();
+        map.put("nTotalHarga", mTotalHarga);
+        //update---
+        firebaseFirestore.collection("ORDERS").document(mOrderId)
+                .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    //get---
+                    firebaseFirestore.collection("ORDERS").document(mOrderId)
+                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                BajuModel model = documentSnapshot.toObject(BajuModel.class);
+                                mTotalHargaTxt.setText(decimalFormat.format(model.getnTotalHarga()));
+                            }
+                        }
+                    });
+                    //get---
+                }
+            }
+        });
+        //update---
     }
 
     public void kurangTotalHarga(int harga) {
         mTotalHarga = mTotalHarga - harga;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
         mTotalHargaTxt.setText(decimalFormat.format(mTotalHarga));
+        Map<String, Object> map = new HashMap<>();
+        map.put("nTotalHarga", mTotalHarga);
+        //update---
+        firebaseFirestore.collection("ORDERS").document(mOrderId)
+                .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    //get---
+                    firebaseFirestore.collection("ORDERS").document(mOrderId)
+                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                BajuModel model = documentSnapshot.toObject(BajuModel.class);
+                                mTotalHargaTxt.setText(decimalFormat.format(model.getnTotalHarga()));
+                            }
+                        }
+                    });
+                    //get---
+                }
+            }
+        });
+        //update---
     }
 
     public void tambahTotalBerat(int berat) {
         mTotalBerat = mTotalBerat + berat;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
         mTotalBeratTxt.setText(decimalFormat.format(mTotalBerat));
+        Map<String, Object> map = new HashMap<>();
+        map.put("nTotalBerat", mTotalBerat);
+        //update---
+        firebaseFirestore.collection("ORDERS").document(mOrderId)
+                .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    //get---
+                    firebaseFirestore.collection("ORDERS").document(mOrderId)
+                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                BajuModel model = documentSnapshot.toObject(BajuModel.class);
+                                mTotalBeratTxt.setText(decimalFormat.format(model.getnTotalBerat()));
+                            }
+                        }
+                    });
+                    //get---
+                }
+            }
+        });
+        //update---
     }
 
     public void kurangTotalBerat(int berat) {
         mTotalBerat = mTotalBerat - berat;
         DecimalFormat decimalFormat = new DecimalFormat("#,##,###,###");
         mTotalBeratTxt.setText(decimalFormat.format(mTotalBerat));
+        Map<String, Object> map = new HashMap<>();
+        map.put("nTotalBerat", mTotalBerat);
+        //update---
+        firebaseFirestore.collection("ORDERS").document(mOrderId)
+                .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    //get---
+                    firebaseFirestore.collection("ORDERS").document(mOrderId)
+                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                BajuModel model = documentSnapshot.toObject(BajuModel.class);
+                                mTotalBeratTxt.setText((decimalFormat.format(model.getnTotalBerat())));
+                            }
+                        }
+                    });
+                    //get---
+                }
+            }
+        });
+        //update---
     }
 
     @Override

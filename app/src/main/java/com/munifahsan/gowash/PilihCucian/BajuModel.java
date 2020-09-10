@@ -12,18 +12,34 @@ public class BajuModel {
     private int nBerat;
     private boolean nVisibility;
 
+    //--
     private int nJumlah;
+    //--
 
-    public BajuModel(){}
+    //---
+    private int nTotalHarga;
+    private int nTotalBaju;
+    private int nTotalBerat;
+    //---
 
-    public BajuModel(String id, String nNama, String nGambar, int nHarga, int nBerat, boolean nVisibility, int nJumlah) {
+    public BajuModel() {
+    }
+
+    public BajuModel(String id, String nNama, String nGambar, int nHarga, int nBerat, boolean nVisibility, int nJumlah, int nTotalHarga, int nTotalBaju, int nTotalBerat) {
         this.id = id;
         this.nNama = nNama;
         this.nGambar = nGambar;
         this.nHarga = nHarga;
         this.nBerat = nBerat;
         this.nVisibility = nVisibility;
+        //--
         this.nJumlah = nJumlah;
+        //--
+        //---
+        this.nTotalHarga = nTotalHarga;
+        this.nTotalBaju = nTotalBaju;
+        this.nTotalBerat = nTotalBerat;
+        //---
     }
 
     public String getId() {
@@ -50,7 +66,21 @@ public class BajuModel {
         return nVisibility;
     }
 
+    //--
     public int getnJumlah() {
         return nJumlah;
+    }
+
+    //---
+    public int getnTotalHarga() {
+        return nTotalHarga;
+    }
+
+    public int getnTotalBaju() {
+        return nTotalBaju;
+    }
+
+    public int getnTotalBerat() {
+        return nTotalBerat;
     }
 }
