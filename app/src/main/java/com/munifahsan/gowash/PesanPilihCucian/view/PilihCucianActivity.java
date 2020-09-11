@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.view;
+package com.munifahsan.gowash.PesanPilihCucian.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,13 +15,13 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.munifahsan.gowash.CustomViewPager;
 import com.munifahsan.gowash.IdGenerator.IdGenerator;
-import com.munifahsan.gowash.PilihCucian.Fragments.AnakFragment;
-import com.munifahsan.gowash.PilihCucian.BajuModel;
-import com.munifahsan.gowash.PilihCucian.Fragments.LainLainFragment;
-import com.munifahsan.gowash.PilihCucian.Fragments.PriaFragment;
-import com.munifahsan.gowash.PilihCucian.Fragments.WanitaFragment;
-import com.munifahsan.gowash.PilihCucian.pres.PilihCucianPres;
-import com.munifahsan.gowash.PilihCucian.pres.PilihCucianPresInt;
+import com.munifahsan.gowash.PesanPilihCucian.Fragments.AnakFragment;
+import com.munifahsan.gowash.PesanPilihCucian.model.BajuModel;
+import com.munifahsan.gowash.PesanPilihCucian.Fragments.LainLainFragment;
+import com.munifahsan.gowash.PesanPilihCucian.Fragments.PriaFragment;
+import com.munifahsan.gowash.PesanPilihCucian.Fragments.WanitaFragment;
+import com.munifahsan.gowash.PesanPilihCucian.pres.PilihCucianPres;
+import com.munifahsan.gowash.PesanPilihCucian.pres.PilihCucianPresInt;
 import com.munifahsan.gowash.R;
 import com.munifahsan.gowash.IdGenerator.IdGeneratorInt;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
@@ -87,6 +87,7 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
 
         int jenis = getIntent().getIntExtra("JENIS_LAYANAN", 0);
         Toast.makeText(this, "LAYANAN : " + jenis, Toast.LENGTH_LONG).show();
+
         mToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         mPilihanTablayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         mViewPager.setAdapter(adapter);

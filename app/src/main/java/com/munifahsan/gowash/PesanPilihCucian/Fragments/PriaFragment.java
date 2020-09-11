@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.Fragments;
+package com.munifahsan.gowash.PesanPilihCucian.Fragments;
 
 import android.os.Bundle;
 
@@ -16,53 +16,60 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.munifahsan.gowash.PesanPilihCucian.adapter.FragmentAdapter;
+import com.munifahsan.gowash.PesanPilihCucian.model.FragmentModel;
 import com.munifahsan.gowash.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class WanitaFragment extends Fragment {
+public class PriaFragment extends Fragment {
+
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-    private CollectionReference reference = firebaseFirestore.collection("DAFTAR_BAJU").document("WANITA").collection("DAFTAR_PAKAIAN");
+    private CollectionReference atasanRef = firebaseFirestore.collection("DAFTAR_BAJU").document("PRIA").collection("DAFTAR_PAKAIAN");
     private FragmentAdapter adapter;
     private LinearLayoutManager linearLayoutManager;
     Query query;
 
-    @BindView(R.id.listWanita)
-    RecyclerView mListWanita;
-    @BindView(R.id.wanitaListContent)
-    RelativeLayout mWanitaListContent;
-    @BindView(R.id.wanitaLoadingContent)
-    ScrollView mWanitaLoadingContent;
+    @BindView(R.id.listAtasan)
+    RecyclerView mListAtasan;
+    @BindView(R.id.priaListContent)
+    RelativeLayout mPriaListContent;
+    @BindView(R.id.priaLoadingContent)
+    ScrollView mPriaLoadingContent;
 
-    private static WanitaFragment instance;
+    private static PriaFragment instance;
 
-    public WanitaFragment() {
+    public PriaFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_wanita, container, false);
+        View view = inflater.inflate(R.layout.fragment_pria, container, false);
+
         ButterKnife.bind(this, view);
-        query = reference;
+
+        query = atasanRef;
 
         FirestoreRecyclerOptions<FragmentModel> options = new FirestoreRecyclerOptions.Builder<FragmentModel>()
                 .setQuery(query, FragmentModel.class)
                 .build();
 
         adapter = new FragmentAdapter(options);
-        mListWanita.setHasFixedSize(true);
+        mListAtasan.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(getActivity());
-        mListWanita.setLayoutManager(linearLayoutManager);
-        mListWanita.setAdapter(adapter);
+        mListAtasan.setLayoutManager(linearLayoutManager);
+        mListAtasan.setAdapter(adapter);
 
         instance = this;
 
@@ -81,23 +88,28 @@ public class WanitaFragment extends Fragment {
         adapter.stopListening();
     }
 
-    public static WanitaFragment getInstance(){
+    public static PriaFragment getInstance(){
         return instance;
     }
 
     public void showContent(){
-        mWanitaListContent.setVisibility(View.VISIBLE);
+        mPriaListContent.setVisibility(View.VISIBLE);
     }
 
     public void hideContent(){
-        mWanitaListContent.setVisibility(View.INVISIBLE);
+        mPriaListContent.setVisibility(View.INVISIBLE);
     }
 
     public void showLoading(){
-        mWanitaLoadingContent.setVisibility(View.VISIBLE);
+        mPriaLoadingContent.setVisibility(View.VISIBLE);
     }
 
     public void hideLoading(){
-        mWanitaLoadingContent.setVisibility(View.INVISIBLE);
+        mPriaLoadingContent.setVisibility(View.INVISIBLE);
+    }
+
+    public String idOrder(){
+        String id = "sdfasf";
+        return id;
     }
 }

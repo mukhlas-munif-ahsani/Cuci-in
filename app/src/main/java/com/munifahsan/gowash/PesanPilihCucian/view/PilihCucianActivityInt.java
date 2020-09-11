@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.view;
+package com.munifahsan.gowash.PesanPilihCucian.view;
 
 public interface PilihCucianActivityInt {
     void showBajuList();

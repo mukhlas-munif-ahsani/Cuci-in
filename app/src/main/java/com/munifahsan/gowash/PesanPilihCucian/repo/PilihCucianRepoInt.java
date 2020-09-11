@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.repo;
+package com.munifahsan.gowash.PesanPilihCucian.repo;
 
 public interface PilihCucianRepoInt {
 

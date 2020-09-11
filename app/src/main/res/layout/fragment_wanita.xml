@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PilihCucian.Fragments.WanitaFragment">
+    tools:context=".PesanPilihCucian.Fragments.WanitaFragment">
 
     <ScrollView
         android:id="@+id/wanitaLoadingContent"

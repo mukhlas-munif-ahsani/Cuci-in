@@ -1,16 +1,16 @@
-package com.munifahsan.gowash.PilihCucian.pres;
+package com.munifahsan.gowash.PesanPilihCucian.pres;
 
 import com.munifahsan.gowash.EventBuss.EventBus;
 import com.munifahsan.gowash.EventBuss.GreenRobotEventBus;
-import com.munifahsan.gowash.PilihCucian.view.PilihCucianActivityInt;
-import com.munifahsan.gowash.PilihCucian.PilihCucianEvent;
-import com.munifahsan.gowash.PilihCucian.repo.PilihCucianRepo;
-import com.munifahsan.gowash.PilihCucian.repo.PilihCucianRepoInt;
+import com.munifahsan.gowash.PesanPilihCucian.view.PilihCucianActivityInt;
+import com.munifahsan.gowash.PesanPilihCucian.PilihCucianEvent;
+import com.munifahsan.gowash.PesanPilihCucian.repo.PilihCucianRepo;
+import com.munifahsan.gowash.PesanPilihCucian.repo.PilihCucianRepoInt;
 
 import org.greenrobot.eventbus.Subscribe;
 
-import static com.munifahsan.gowash.PilihCucian.PilihCucianEvent.onError;
-import static com.munifahsan.gowash.PilihCucian.PilihCucianEvent.onSuccess;
+import static com.munifahsan.gowash.PesanPilihCucian.PilihCucianEvent.onError;
+import static com.munifahsan.gowash.PesanPilihCucian.PilihCucianEvent.onSuccess;
 
 public class PilihCucianPres implements PilihCucianPresInt{
     private PilihCucianActivityInt mPilihCucianView;

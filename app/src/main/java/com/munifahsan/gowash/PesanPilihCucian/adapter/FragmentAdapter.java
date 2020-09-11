@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.Fragments;
+package com.munifahsan.gowash.PesanPilihCucian.adapter;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,8 +20,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.munifahsan.gowash.PilihCucian.BajuModel;
-import com.munifahsan.gowash.PilihCucian.view.PilihCucianActivity;
+import com.munifahsan.gowash.PesanPilihCucian.model.BajuModel;
+import com.munifahsan.gowash.PesanPilihCucian.model.FragmentModel;
+import com.munifahsan.gowash.PesanPilihCucian.view.PilihCucianActivity;
 import com.munifahsan.gowash.R;
 
 import java.util.HashMap;

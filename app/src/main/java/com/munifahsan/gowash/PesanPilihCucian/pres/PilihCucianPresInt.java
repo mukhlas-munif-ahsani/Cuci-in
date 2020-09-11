@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.pres;
+package com.munifahsan.gowash.PesanPilihCucian.pres;
 
 public interface PilihCucianPresInt {
     void onCreate();

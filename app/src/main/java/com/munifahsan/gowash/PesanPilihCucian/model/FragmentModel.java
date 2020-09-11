@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.Fragments;
+package com.munifahsan.gowash.PesanPilihCucian.model;
 
 import com.google.firebase.firestore.DocumentId;
 

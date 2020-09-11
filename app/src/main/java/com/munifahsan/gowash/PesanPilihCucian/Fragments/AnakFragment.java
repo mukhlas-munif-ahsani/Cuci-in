@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.Fragments;
+package com.munifahsan.gowash.PesanPilihCucian.Fragments;
 
 import android.os.Bundle;
 
@@ -16,6 +16,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.munifahsan.gowash.PesanPilihCucian.adapter.FragmentAdapter;
+import com.munifahsan.gowash.PesanPilihCucian.model.FragmentModel;
 import com.munifahsan.gowash.R;
 
 import butterknife.BindView;

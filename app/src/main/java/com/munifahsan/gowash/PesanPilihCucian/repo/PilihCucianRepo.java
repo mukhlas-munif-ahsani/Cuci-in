@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.repo;
+package com.munifahsan.gowash.PesanPilihCucian.repo;
 
 import android.util.Log;
 
@@ -11,7 +11,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.munifahsan.gowash.EventBuss.EventBus;
 import com.munifahsan.gowash.EventBuss.GreenRobotEventBus;
-import com.munifahsan.gowash.PilihCucian.PilihCucianEvent;
+import com.munifahsan.gowash.PesanPilihCucian.PilihCucianEvent;
 
 import java.util.HashMap;
 import java.util.Map;

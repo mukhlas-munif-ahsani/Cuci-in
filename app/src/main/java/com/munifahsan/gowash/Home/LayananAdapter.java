@@ -12,7 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.munifahsan.gowash.CardAdapter.CardAdapter;
-import com.munifahsan.gowash.PilihCucian.view.PilihCucianActivity;
+import com.munifahsan.gowash.PesanPilihCucian.view.PilihCucianActivity;
 import com.munifahsan.gowash.R;
 
 import java.util.ArrayList;

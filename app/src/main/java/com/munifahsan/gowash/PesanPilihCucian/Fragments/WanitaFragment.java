@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian.Fragments;
+package com.munifahsan.gowash.PesanPilihCucian.Fragments;
 
 import android.os.Bundle;
 
@@ -16,30 +16,30 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.munifahsan.gowash.PesanPilihCucian.adapter.FragmentAdapter;
+import com.munifahsan.gowash.PesanPilihCucian.model.FragmentModel;
 import com.munifahsan.gowash.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
-public class LainLainFragment extends Fragment {
-
+public class WanitaFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-    private CollectionReference reference = firebaseFirestore.collection("DAFTAR_BAJU").document("LAINLAIN").collection("DAFTAR_PAKAIAN");
+    private CollectionReference reference = firebaseFirestore.collection("DAFTAR_BAJU").document("WANITA").collection("DAFTAR_PAKAIAN");
     private FragmentAdapter adapter;
     private LinearLayoutManager linearLayoutManager;
     Query query;
 
-    @BindView(R.id.listlain)
-    RecyclerView mListLain;
-    @BindView(R.id.lainListContent)
-    RelativeLayout mLainListContent;
-    @BindView(R.id.lainLoadingContent)
-    ScrollView mLainLoadingContent;
+    @BindView(R.id.listWanita)
+    RecyclerView mListWanita;
+    @BindView(R.id.wanitaListContent)
+    RelativeLayout mWanitaListContent;
+    @BindView(R.id.wanitaLoadingContent)
+    ScrollView mWanitaLoadingContent;
 
-    private static LainLainFragment instance;
+    private static WanitaFragment instance;
 
-    public LainLainFragment() {
+    public WanitaFragment() {
         // Required empty public constructor
     }
 
@@ -52,7 +52,7 @@ public class LainLainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_lain_lain, container, false);
+        View view = inflater.inflate(R.layout.fragment_wanita, container, false);
         ButterKnife.bind(this, view);
         query = reference;
 
@@ -61,10 +61,10 @@ public class LainLainFragment extends Fragment {
                 .build();
 
         adapter = new FragmentAdapter(options);
-        mListLain.setHasFixedSize(true);
+        mListWanita.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(getActivity());
-        mListLain.setLayoutManager(linearLayoutManager);
-        mListLain.setAdapter(adapter);
+        mListWanita.setLayoutManager(linearLayoutManager);
+        mListWanita.setAdapter(adapter);
 
         instance = this;
 
@@ -83,23 +83,23 @@ public class LainLainFragment extends Fragment {
         adapter.stopListening();
     }
 
-    public static LainLainFragment getInstance(){
+    public static WanitaFragment getInstance(){
         return instance;
     }
 
     public void showContent(){
-        mLainListContent.setVisibility(View.VISIBLE);
+        mWanitaListContent.setVisibility(View.VISIBLE);
     }
 
     public void hideContent(){
-        mLainListContent.setVisibility(View.INVISIBLE);
+        mWanitaListContent.setVisibility(View.INVISIBLE);
     }
 
     public void showLoading(){
-        mLainLoadingContent.setVisibility(View.VISIBLE);
+        mWanitaLoadingContent.setVisibility(View.VISIBLE);
     }
 
     public void hideLoading(){
-        mLainLoadingContent.setVisibility(View.INVISIBLE);
+        mWanitaLoadingContent.setVisibility(View.INVISIBLE);
     }
 }

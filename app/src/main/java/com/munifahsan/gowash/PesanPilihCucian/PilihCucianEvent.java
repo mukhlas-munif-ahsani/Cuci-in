@@ -1,4 +1,4 @@
-package com.munifahsan.gowash.PilihCucian;
+package com.munifahsan.gowash.PesanPilihCucian;
 
 public class PilihCucianEvent {
     public static final int onError = 0;
