@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.munifahsan.gowash.PesanPilihCucian.Fragments.PriaFragment;
 import com.munifahsan.gowash.PesanPilihCucian.Fragments.WanitaFragment;
 import com.munifahsan.gowash.PesanPilihCucian.pres.PilihCucianPres;
 import com.munifahsan.gowash.PesanPilihCucian.pres.PilihCucianPresInt;
+import com.munifahsan.gowash.PesanReview.ReviewCucianActivity;
 import com.munifahsan.gowash.R;
 import com.munifahsan.gowash.IdGenerator.IdGeneratorInt;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
@@ -34,6 +36,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PilihCucianActivity extends AppCompatActivity implements PilihCucianActivityInt {
 
@@ -64,7 +67,6 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
     private static PilihCucianActivity instance;
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +77,9 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         mPilihCucianPres.onCreate();
         mGeneratedId = IdGenerator.getInstance();
         instance = this;
+
+        mOrderId = mGeneratedId.getOrderId();
+        mUserId = mGeneratedId.getUserId();
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
@@ -102,14 +107,18 @@ public class PilihCucianActivity extends AppCompatActivity implements PilihCucia
         mPilihCucianPres.onDestroy();
     }
 
+    @OnClick(R.id.nextBtn)
+    public void nextOnClick(){
+        Intent intent = new Intent(this, ReviewCucianActivity.class);
+        intent.putExtra("ORDER_ID", mOrderId);
+        startActivity(intent);
+    }
+
     public static PilihCucianActivity getInstance() {
         return instance;
     }
 
     public void createNewOrder() {
-        mOrderId = mGeneratedId.getOrderId();
-        mUserId = mGeneratedId.getUserId();
-
         mPilihCucianPres.createNewOrder(mOrderId, mUserId);
     }
 

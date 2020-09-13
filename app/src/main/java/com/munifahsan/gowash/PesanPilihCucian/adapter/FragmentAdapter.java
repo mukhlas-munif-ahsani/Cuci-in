@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -53,6 +54,10 @@ public class FragmentAdapter extends FirestoreRecyclerAdapter<FragmentModel, Fra
         String id = PilihCucianActivity.getInstance().orderId();
 
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+
+        if (!model.isnVisibility()){
+            holder.mItemBajulay.setVisibility(View.GONE);
+        }
 
         if (model.getnTipe() == 1) {
             holder.mLabel.setVisibility(View.VISIBLE);
@@ -235,6 +240,7 @@ public class FragmentAdapter extends FirestoreRecyclerAdapter<FragmentModel, Fra
         private ImageView mCloudImg;
         private TextView mLabel;
         private CardView mCard;
+        private FrameLayout mItemBajulay;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -250,6 +256,7 @@ public class FragmentAdapter extends FirestoreRecyclerAdapter<FragmentModel, Fra
             mCloudImg = itemView.findViewById(R.id.imgCloud);
             mLabel = itemView.findViewById(R.id.labelTxt);
             mCard = itemView.findViewById(R.id.cardCrd);
+            mItemBajulay = itemView.findViewById(R.id.itemBaju);
 
         }
     }

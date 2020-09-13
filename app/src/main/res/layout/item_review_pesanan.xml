@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="8dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/reviewJumlahTxt"
+            android:layout_width="wrap_content"
+            android:textColor="@color/hitam"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/xTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hitam"
+            android:layout_marginStart="8dp"
+            android:text="X" />
+
+        <TextView
+            android:id="@+id/reviewNamaTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hitam"
+            android:layout_marginStart="8dp"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_toStartOf="@+id/III"
+        android:layout_width="150dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_alignParentStart="true"
+            android:id="@+id/reviewBeratTxt"
+            android:layout_width="38dp"
+            android:textColor="@color/hitam"
+            android:layout_height="wrap_content"
+            android:text="4.000" />
+
+        <TextView
+            android:layout_toEndOf="@+id/reviewBeratTxt"
+            android:id="@+id/gTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hitam"
+            android:layout_marginEnd="18dp"
+            android:text="g" />
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/estimasiTxt"
+            android:layout_width="wrap_content"
+            android:textColor="@color/hitam"
+            android:layout_height="wrap_content"
+            android:text="(Estimasi Berat)" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/III"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:id="@+id/rpTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hitam"
+            android:text="Rp." />
+
+        <TextView
+            android:id="@+id/reviewHargaTxt"
+            android:layout_width="wrap_content"
+            android:textColor="@color/hitam"
+            android:layout_height="wrap_content"
+            android:text="5.000" />
+    </LinearLayout>
+
+</RelativeLayout>
