@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backGroundColor5"
-    tools:context=".PesanReview.ReviewCucianActivity">
+    android:background="@color/putih"
+    tools:context=".PesanReview.view.ReviewCucianActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -298,7 +298,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="9dp"
-            android:text="tulis_catatan"
+            android:text="Tulis Catatan "
             android:textColor="@android:color/black"
             android:textSize="13sp"
             android:textStyle="bold" />
@@ -311,7 +311,7 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/text_border"
             android:gravity="top|start"
-            android:hint="Masukan Catatan"
+            android:hint="Pakaian warna putih jangan di campur ketika mencuci"
             android:inputType="textCapSentences|textMultiLine"
             android:maxLength="2000"
             android:maxLines="5"
@@ -339,7 +339,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/backGroundColor5"
+        android:backgroundTint="@color/putih"
         app:cardCornerRadius="30dp"
         app:cardElevation="0dp">
 
@@ -362,7 +362,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:backgroundTint="@color/backGroundColor5"
+            android:backgroundTint="@color/putih"
             android:elevation="0dp"
             android:src="@drawable/ic_chevron_left"
             app:borderWidth="0dp"

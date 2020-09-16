@@ -32,11 +32,11 @@ public class TestActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
 
         mLayananAdapter = new LayananAdapter();
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor2), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor3), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor4), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor5), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
+//        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
+//        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor2), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
+//        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor3), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
+//        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor4), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
+//        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor5), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
 
         mShadowTransformer = new ShadowTransformer(viewPager, mLayananAdapter);
         viewPager.setAdapter(mLayananAdapter);

@@ -23,7 +23,7 @@ import com.munifahsan.gowash.PesanPilihCucian.Fragments.PriaFragment;
 import com.munifahsan.gowash.PesanPilihCucian.Fragments.WanitaFragment;
 import com.munifahsan.gowash.PesanPilihCucian.pres.PilihCucianPres;
 import com.munifahsan.gowash.PesanPilihCucian.pres.PilihCucianPresInt;
-import com.munifahsan.gowash.PesanReview.ReviewCucianActivity;
+import com.munifahsan.gowash.PesanReview.view.ReviewCucianActivity;
 import com.munifahsan.gowash.R;
 import com.munifahsan.gowash.IdGenerator.IdGeneratorInt;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;

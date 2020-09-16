@@ -1,7 +1,6 @@
-package com.munifahsan.gowash.PesanReview;
+package com.munifahsan.gowash.PesanReview.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,13 +12,18 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.munifahsan.gowash.PesanPilihCucian.adapter.FragmentAdapter;
+import com.munifahsan.gowash.PesanReview.ReviewAdapter;
+import com.munifahsan.gowash.PesanReview.ReviewModel;
+import com.munifahsan.gowash.PesanReview.pres.ReviewCucianPres;
+import com.munifahsan.gowash.PesanReview.pres.ReviewCucianPresInt;
 import com.munifahsan.gowash.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ReviewCucianActivity extends AppCompatActivity {
+public class ReviewCucianActivity extends AppCompatActivity implements ReviewCucianActInt {
+
+    private ReviewCucianPresInt mReviewCucianPres;
 
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private CollectionReference reference = firebaseFirestore.collection("ORDERS");
@@ -46,6 +50,8 @@ public class ReviewCucianActivity extends AppCompatActivity {
         setContentView(R.layout.activity_review_cucian);
 
         ButterKnife.bind(this);
+        mReviewCucianPres = new ReviewCucianPres(this);
+        mReviewCucianPres.onCreate();
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -64,6 +70,13 @@ public class ReviewCucianActivity extends AppCompatActivity {
         mReviewRv.setLayoutManager(linearLayoutManager);
         mReviewRv.setAdapter(adapter);
 
+        mReviewCucianPres.getData(mOrderId);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mReviewCucianPres.onDestroy();
     }
 
     @Override
@@ -76,5 +89,15 @@ public class ReviewCucianActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    public void setTotalBerat(int totalBerat){
+        mBeratTxt.setText(String.valueOf(totalBerat));
+    }
+
+    @Override
+    public void setSubtotalHarga(int subtotalHarga){
+        mSubtotalHargaTxt.setText(String.valueOf(subtotalHarga));
     }
 }

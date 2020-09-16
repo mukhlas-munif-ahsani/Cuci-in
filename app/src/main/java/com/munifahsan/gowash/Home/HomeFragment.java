@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.munifahsan.gowash.CardAdapter.ShadowTransformer;
@@ -39,7 +40,7 @@ public class HomeFragment extends Fragment {
     private Integer[] colors = null;
     private ArgbEvaluator argbEvaluator = new ArgbEvaluator();
     private ShadowTransformer mShadowTransformer;
-    private CoordinatorLayout mHome;
+    private FrameLayout mHome;
     private Runnable runnable;
 
     @BindView(R.id.pilihPaketTxt)
@@ -65,11 +66,78 @@ public class HomeFragment extends Fragment {
         mSliderView = view.findViewById(R.id.imageSlider);
 
         mLayananAdapter = new LayananAdapter();
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1), "Cuci Komplit", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor2), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor3), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor4), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
-        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor5), "Brochure", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
+
+        /*
+          paket 1
+         */
+        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1),
+                "Cuci Komplit",
+                "KILAT",
+                "Hemat",
+                "Cuci kering",
+                "Strika uap",
+                "Pewangi pakaian",
+                "Antar & jempu",
+                null,
+                "3 Hari",
+                "3,5K/kg"));
+        /*
+          paket 2
+         */
+        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1),
+                "Cuci Komplit",
+                null,
+                "Cuci kering",
+                "Strika uap",
+                "Pewangi pakaian",
+                "Antar & jempu",
+                null,
+                null,
+                "3 Hari",
+                "3,5K/kg"));
+        /*
+          paket 3
+         */
+        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1),
+                "Cuci Komplit",
+                null,
+                "Cuci kering",
+                "Strika uap",
+                null,
+                null,
+                null,
+                null,
+                "3 Hari",
+                "3,5K/kg"));
+        /*
+          paket 4
+         */
+        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1),
+                "Cuci Komplit",
+                null,
+                "Cuci kering",
+                "Strika uap",
+                "Pewangi pakaian",
+                null,
+                null,
+                null,
+                "3 Hari",
+                "3,5K/kg"));
+        /*
+          paket 5
+         */
+        mLayananAdapter.addCardItem(new LayananModel(getResources().getColor(R.color.cardColor1),
+                "Cuci Komplit",
+                "KILAT",
+                "Cuci kering",
+                "Strika uap",
+                "Pewangi pakaian",
+                null,
+                null,
+                null,
+                "3 Hari",
+                "3,5K/kg"));
+
         mShadowTransformer = new ShadowTransformer(viewPager, mLayananAdapter);
 
         setlayananItem();
@@ -95,7 +163,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    public void setlayananItem(){
+    public void setlayananItem() {
 
         mShadowTransformer.enableScaling(true);
         viewPager.setAdapter(mLayananAdapter);
